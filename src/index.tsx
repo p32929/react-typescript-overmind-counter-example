@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createOvermind} from 'overmind';
 import {Provider} from 'overmind-react';
 import {config} from './Overmind/OvermindHelper'
+import Counter from "./Components/Counter";
 
 export const overmind = createOvermind(config, {
     devtools: false,
@@ -14,7 +14,7 @@ export const overmind = createOvermind(config, {
 ReactDOM.render(
     <Provider value={overmind}>
         <React.StrictMode>
-            <App/>
+            <Counter/>
         </React.StrictMode>
     </Provider>,
     document.getElementById('root')
