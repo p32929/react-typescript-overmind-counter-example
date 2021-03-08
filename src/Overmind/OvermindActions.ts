@@ -1,5 +1,5 @@
-import {Action} from 'overmind';
+import {Context} from './OvermindHelper'
 
-export const increase: Action<number> = ({state}, num) => {
-    state.counter += num;
-};
+export const increase = ({state}: Context, value: number) => {
+    state.counter += value;
+}
