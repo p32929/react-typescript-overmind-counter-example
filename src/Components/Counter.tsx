@@ -1,15 +1,16 @@
 import React from 'react';
-import {useOvermind} from "../Overmind/OvermindHelper";
+import {useActions, useAppState} from "../Overmind/OvermindHelper";
 
 const Counter: React.FunctionComponent = () => {
-    const {actions, state} = useOvermind()
+    const {increase} = useActions()
+    const {counter} = useAppState()
 
     return (
         <div>
             <p>TEST OVERMIND: </p>
-            <p>{state.counter}</p>
+            <p>{counter}</p>
             <button onClick={() => {
-                actions.increase(1);
+                increase(1);
             }}>++
             </button>
         </div>
